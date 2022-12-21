@@ -1,0 +1,72 @@
+.sou-cover {
+	position: relative;
+	padding: __remcalc(15) 0 0;
+	//margin-bottom: __remcalc(78);
+	height: 714px;
+	z-index: $zindex-fixed;
+
+	&:before,
+	&:after {
+		position: absolute;
+		content: "";
+		z-index: -$zindex-dropdown;
+	}
+
+	&:before {
+		width: 10px;
+		height: 900px;
+		top: -118px;
+		left: 0;
+		background: $blue url(../../assets/cover.bg.png) top left no-repeat;
+
+		@include media-breakpoint-up("md") {
+			width: 37px;
+		}
+	}
+
+	@include media-breakpoint-up("md") {
+		padding: __remcalc(33) 0 0;
+
+		&:after {
+			width: 840px;
+			height: 540px;
+			top: 0;
+			right: 0;
+			background: url(../../assets/cover.bg.desktop.jpg) top right no-repeat;
+
+			@include media-breakpoint-between(sm, md) {
+				background-size: 65% auto;
+			}
+		}
+	}
+
+	&--subtitle {
+		margin-bottom: __remcalc(11);
+	}
+
+	&--title {
+		margin-bottom: __remcalc(27);
+
+		@include media-breakpoint-up("md") {
+			margin-bottom: __remcalc(44);
+		}
+	}
+
+	&--cards {
+		min-height: __remcalc(200);
+	}
+
+	&--carousel {
+		display: none;
+
+		@include media-breakpoint-only("xs") {
+			display: block;
+		}
+	}
+
+	&--noCarousel {
+		@include media-breakpoint-only("xs") {
+			display: none;
+		}
+	}
+}

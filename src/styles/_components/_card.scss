@@ -1,0 +1,68 @@
+.sou-card {
+	&--title {
+		@include setFontStyle(16,$font-weight-bolder,1.2em);
+		color: $blue;
+		margin-bottom: __remcalc(20);
+
+		@include media-breakpoint-up("md") {
+			@include setFontStyle(20,$font-weight-bolder,1.1em);
+		}
+	}
+
+	&--text {
+		margin-bottom: __remcalc(5);
+		@include setFontStyle(16,$font-weight-normal,1.3em);
+
+		@include media-breakpoint-up("md") {
+			@include setFontStyle(18,$font-weight-normal,1.4em);
+		}
+
+		.sou-bg--darkblue & {
+			color: $white;
+		}
+	}
+
+	&--image {
+		margin-bottom: __remcalc(28);
+
+		svg {
+			width: __remcalc(58);
+			height: __remcalc(58);
+		}
+	}
+
+	&--deck {
+		@include media-breakpoint-up("xl") {
+			margin-right: -32px;
+			margin-left: -32px;
+
+			.card {
+				margin-right: 32px;
+				margin-left: 32px;
+			}
+		}
+	}
+
+	.card {
+		.sou-bg--darkblue & {
+			background-color: inherit;
+			border: none;
+
+			&:not(:last-child) {
+				@include media-breakpoint-down("sm") {
+					margin-top: __remcalc(65);
+					margin-bottom: __remcalc(65);
+				}
+			}
+		}
+	}
+
+	.card-body {
+		padding: 0;
+
+		&:not(.sou-bg--darkblue &)  {
+			padding: __remcalc(20) __remcalc(28);
+		}
+
+	}
+}
